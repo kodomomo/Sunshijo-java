@@ -15,5 +15,3 @@ spring:
     username: ${DB_USERNAME}
     password: ${DB_PWD}
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-  
