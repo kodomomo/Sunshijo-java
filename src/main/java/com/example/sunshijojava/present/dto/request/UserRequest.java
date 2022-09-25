@@ -1,4 +1,4 @@
-package com.example.sunshijojava.domain.present.dto.request;
+package com.example.sunshijojava.present.dto.request;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

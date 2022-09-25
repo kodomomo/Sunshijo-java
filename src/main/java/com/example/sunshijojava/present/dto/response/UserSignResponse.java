@@ -1,4 +1,4 @@
-package com.example.sunshijojava.domain.present.dto.response;
+package com.example.sunshijojava.present.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

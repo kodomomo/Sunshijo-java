@@ -1,4 +1,4 @@
-package com.example.sunshijojava.domain.domain;
+package com.example.sunshijojava.domain;
 
 import lombok.AccessLevel;
 import lombok.Builder;

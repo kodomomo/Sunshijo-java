@@ -1,6 +1,6 @@
-package com.example.sunshijojava.domain.domain.repository;
+package com.example.sunshijojava.domain.repository;
 
-import com.example.sunshijojava.domain.domain.User;
+import com.example.sunshijojava.domain.User;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

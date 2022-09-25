@@ -1,7 +1,7 @@
-package com.example.sunshijojava.domain.service;
+package com.example.sunshijojava.service;
 
-import com.example.sunshijojava.domain.domain.User;
-import com.example.sunshijojava.domain.domain.repository.UserRepository;
+import com.example.sunshijojava.domain.User;
+import com.example.sunshijojava.domain.repository.UserRepository;
 import com.example.sunshijojava.exception.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

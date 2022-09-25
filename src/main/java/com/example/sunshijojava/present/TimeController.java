@@ -1,8 +1,8 @@
-package com.example.sunshijojava.domain.present;
+package com.example.sunshijojava.present;
 
-import com.example.sunshijojava.domain.present.dto.request.UserRequest;
-import com.example.sunshijojava.domain.present.dto.response.UserSignResponse;
-import com.example.sunshijojava.domain.service.InfoSetService;
+import com.example.sunshijojava.present.dto.response.UserSignResponse;
+import com.example.sunshijojava.present.dto.request.UserRequest;
+import com.example.sunshijojava.service.InfoSetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
