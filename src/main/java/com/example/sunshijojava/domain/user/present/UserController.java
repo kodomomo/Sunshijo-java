@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/auth")
 @RequiredArgsConstructor
 public class UserController {
     private final UserSignService userSignService;
 
-    @PostMapping
+    @PostMapping("/login")
     public void sign(@RequestBody @Valid UserRequest request) {
         userSignService.sign(request);
     }
