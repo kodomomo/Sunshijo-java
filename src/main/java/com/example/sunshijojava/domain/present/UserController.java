@@ -1,7 +1,8 @@
-package com.example.sunshijojava.domain.user.present;
+package com.example.sunshijojava.domain.present;
 
-import com.example.sunshijojava.domain.user.present.dto.UserRequest;
-import com.example.sunshijojava.domain.user.service.UserSignService;
+import com.example.sunshijojava.domain.domain.User;
+import com.example.sunshijojava.domain.present.dto.request.UserRequest;
+import com.example.sunshijojava.domain.service.UserSignService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,7 @@ public class UserController {
     private final UserSignService userSignService;
 
     @PostMapping("/login")
-    public void sign(@RequestBody @Valid UserRequest request) {
-        userSignService.sign(request);
+    public User sign(@RequestBody @Valid UserRequest request) {
+        return userSignService.sign(request);
     }
 }
