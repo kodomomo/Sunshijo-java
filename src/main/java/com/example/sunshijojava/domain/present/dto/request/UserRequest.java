@@ -1,4 +1,4 @@
-package com.example.sunshijojava.domain.user.present.dto;
+package com.example.sunshijojava.domain.present.dto.request;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,6 +10,6 @@ public class UserRequest {
     private int grade;
 
     private int classNum;
-    
+
     private String deviceToken;
 }

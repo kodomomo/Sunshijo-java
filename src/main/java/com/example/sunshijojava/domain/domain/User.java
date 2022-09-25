@@ -1,4 +1,4 @@
-package com.example.sunshijojava.domain.user.domain;
+package com.example.sunshijojava.domain.domain;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -33,5 +33,10 @@ public class User {
         this.grade = grade;
         this.classNum = classNum;
         this.deviceToken = deviceToken;
+    }
+
+    public void updateUser(int grade, int classNum) {
+        this.grade = grade;
+        this.classNum = classNum;
     }
 }
