@@ -2,10 +2,9 @@ package com.example.sunshijojava.service;
 
 import com.example.sunshijojava.domain.User;
 import com.example.sunshijojava.domain.repository.UserRepository;
-import com.example.sunshijojava.present.dto.request.UserInfoSetResponse;
-import com.example.sunshijojava.present.dto.request.UserRequest;
-import com.example.sunshijojava.present.dto.response.UserSignResponse;
 import com.example.sunshijojava.exception.UserNotFoundException;
+import com.example.sunshijojava.present.dto.request.UserInfoSetResponse;
+import com.example.sunshijojava.present.dto.response.UserSignResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
