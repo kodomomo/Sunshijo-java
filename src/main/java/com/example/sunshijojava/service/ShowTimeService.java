@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,23 +17,34 @@ import java.util.stream.Collectors;
 public class ShowTimeService {
     private final TimeRepository timeRepository;
 
-    public QueryResponse time(TimeRequest request) {
+    public QueryListResponse time(TimeRequest request) {
+        List<QueryResponse> list1 = new ArrayList<>();
 
-        List<QueryResponse.QueryTimeResponse> list =
-                timeRepository.findAllByDayOfWeekAndGradeAndClassNumOrderByDayOfWeekAscSequenceAsc(
-                                request.getDate(), request.getGrade(), request.getClassNum()
-                        )
-                        .stream()
-                        .map(time ->
-                                QueryResponse.QueryTimeResponse.builder()
-                                        .scheduleId(time.getScheduleId())
-                                        .dayOfWeek(time.getDayOfWeek())
-                                        .sequence(time.getSequence())
-                                        .subject(time.getSubject())
-                                        .isExam(time.isExam())
-                                        .build()
-                        ).collect(Collectors.toList());
+        for (int i = 0; i < 5; i++) {
 
-        return new QueryResponse(list);
+            LocalDateTime dateTime = request.getDate().plusDays(i);
+
+            List<QueryResponse.QueryTimeResponse> list =
+
+                    timeRepository.findAllByDayOfWeekAndGradeAndClassNumOrderByDayOfWeekAscSequenceAsc(
+                                    dateTime, request.getGrade(), request.getClassNum()
+                            )
+                            .stream()
+                            .map(time ->
+                                    QueryResponse.QueryTimeResponse.builder()
+                                            .scheduleId(time.getId())
+                                            .dayOfWeek(time.getDayOfWeek())
+                                            .sequence(time.getSequence())
+                                            .subject(time.getSubject())
+                                            .isExam(time.isExam())
+                                            .build()
+                            ).collect(Collectors.toList());
+
+            list1.add((QueryResponse) list);
+
+        }
+
+        return new QueryListResponse(list1);
+
     }
 }
