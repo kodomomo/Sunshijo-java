@@ -39,13 +39,18 @@ public class Time {
     @Column
     private boolean isExam;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "exam_id", nullable = false)
+    private Exam exam;
+
     @Builder
-    public Time(int grade, int classNum, String subject, LocalDateTime dayOfWeek, int sequence, boolean isExam) {
+    public Time(int grade, int classNum, String subject, LocalDateTime dayOfWeek, int sequence, boolean isExam, Exam exam) {
         this.grade = grade;
         this.classNum = classNum;
         this.subject = subject;
         this.dayOfWeek = dayOfWeek;
         this.sequence = sequence;
         this.isExam = isExam;
+        this.exam = exam;
     }
 }

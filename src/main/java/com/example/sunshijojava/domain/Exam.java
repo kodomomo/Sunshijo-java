@@ -25,6 +25,9 @@ public class Exam extends BaseTimeEntity {
     private String subject;
 
     @Column
+    private String title;
+
+    @Column
     private String content;
 
     @Column
