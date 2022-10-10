@@ -6,11 +6,13 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.UUID;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Entity(name = "tbl_schedule")
+@Table(name = "tbl_schedule")
+@Entity
 public class Time {
     @Id @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
@@ -27,7 +29,7 @@ public class Time {
     private String subject;
 
     @Column
-    private String dayOfWeek;
+    private Date dayOfWeek;
 
     @Column
     private int sequence;

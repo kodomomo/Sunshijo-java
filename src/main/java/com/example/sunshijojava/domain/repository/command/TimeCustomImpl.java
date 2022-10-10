@@ -14,7 +14,6 @@ public class TimeCustomImpl implements TimeCustom {
 
     private final JPAQueryFactory query;
 
-
     @Override
     public List<Time> getTimeByDate(String date) {
         return null;
