@@ -7,8 +7,9 @@ import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
-public class TimeRequest {
+public class ExamRequest {
     private int grade;
     private int classNum;
-    private LocalDateTime date;
+    private LocalDateTime dateTime;
+    private int sequence;
 }
