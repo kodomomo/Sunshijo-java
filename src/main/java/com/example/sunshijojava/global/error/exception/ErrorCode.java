@@ -8,6 +8,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum ErrorCode {
+    TIME_NOT_FOUND(404, "schedule-404-1", "schedule not found"),
     USER_NOT_FOUND(404, "user-404-0", "user not found");
 
     private final int status;
