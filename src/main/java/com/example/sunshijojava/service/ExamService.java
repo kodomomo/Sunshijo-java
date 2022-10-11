@@ -20,7 +20,7 @@ public class ExamService {
 
     public ExamResponse findExam(ExamRequest request) {
         Time time = timeRepository.findByDayOfWeekAndGradeAndClassNumAndSequence(
-                request.getDateTime(), request.getGrade(), request.getClassNum(), request.getSequence()
+                        String.valueOf(request.getDateTime()), request.getGrade(), request.getClassNum(), request.getSequence()
                 )
                 .orElseThrow(() -> ScheduleNotFoundException.EXCEPTION);
 

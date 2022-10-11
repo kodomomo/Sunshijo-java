@@ -10,5 +10,5 @@ import java.time.LocalDateTime;
 public class TimeRequest {
     private int grade;
     private int classNum;
-    private LocalDateTime date;
+    private String date;
 }

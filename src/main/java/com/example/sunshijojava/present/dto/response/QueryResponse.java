@@ -18,7 +18,7 @@ public class QueryResponse {
     @Builder
     public static class QueryTimeResponse {
         private final UUID scheduleId;
-        private final LocalDateTime dayOfWeek;
+        private final String dayOfWeek;
         private final int sequence;
         private final String subject;
         private final boolean isExam;
