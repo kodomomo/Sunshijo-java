@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 public class UserSignService {
     private final UserRepository userRepository;
 
-    public User sign(UserRequest request) {
-        return userRepository.save(
+    public void sign(UserRequest request) {
+         userRepository.save(
                 User.builder()
                         .grade(request.getGrade())
                         .classNum(request.getClassNum())

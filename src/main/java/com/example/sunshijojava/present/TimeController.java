@@ -2,10 +2,9 @@ package com.example.sunshijojava.present;
 
 import com.example.sunshijojava.present.dto.request.ExamRequest;
 import com.example.sunshijojava.present.dto.request.TimeRequest;
-import com.example.sunshijojava.present.dto.request.UserInfoSetResponse;
+import com.example.sunshijojava.present.dto.request.UserInfoSetRequest;
 import com.example.sunshijojava.present.dto.response.ExamResponse;
 import com.example.sunshijojava.present.dto.response.QueryListResponse;
-import com.example.sunshijojava.present.dto.response.UserSignResponse;
 import com.example.sunshijojava.service.ExamService;
 import com.example.sunshijojava.service.InfoSetService;
 import com.example.sunshijojava.service.ShowTimeService;
@@ -23,8 +22,8 @@ public class TimeController {
     private final ExamService examService;
 
     @PatchMapping("/settings/{device}")
-    public UserSignResponse update(@PathVariable("device") String deviceToken, @RequestBody @Valid UserInfoSetResponse request) {
-        return infoSetService.updateInfo(deviceToken, request);
+    public void update(@PathVariable("device") String deviceToken, @RequestBody @Valid UserInfoSetRequest request) {
+          infoSetService.updateInfo(deviceToken, request);
     }
 
     @GetMapping("/schedule")

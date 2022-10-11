@@ -20,16 +20,13 @@ public class User {
     @Column(columnDefinition = "BINARY(36)")
     private UUID id;
 
-    @NotNull
     @Column
     private int grade;
 
-    @NotNull
     @Column
     private int classNum;
 
-    @NotNull
-    @Column
+    @Column(unique = true)
     private String deviceToken;
 
     @Builder

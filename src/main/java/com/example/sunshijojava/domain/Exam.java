@@ -1,6 +1,5 @@
 package com.example.sunshijojava.domain;
 
-import com.example.sunshijojava.global.entity.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "tbl_exam")
 @Entity
-public class Exam extends BaseTimeEntity {
+public class Exam {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")

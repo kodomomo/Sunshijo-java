@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class UserInfoSetResponse {
+public class UserInfoSetRequest {
     private int grade;
     private int classNum;
 }
