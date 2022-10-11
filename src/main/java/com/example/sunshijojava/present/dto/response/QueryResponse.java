@@ -1,6 +1,5 @@
 package com.example.sunshijojava.present.dto.response;
 
-import com.querydsl.core.annotations.QueryProjection;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,13 +23,5 @@ public class QueryResponse {
         private final String subject;
         private final boolean isExam;
 
-        @QueryProjection
-        public QueryTimeResponse(UUID scheduleId, LocalDateTime dayOfWeek, int sequence, String subject,boolean isExam) {
-            this.scheduleId = scheduleId;
-            this.dayOfWeek = dayOfWeek;
-            this.sequence = sequence;
-            this.subject = subject;
-            this.isExam = isExam;
-        }
     }
 }
