@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Getter
@@ -30,7 +29,7 @@ public class Exam {
     private String content;
 
     @Column
-    private LocalDateTime date;
+    private String date;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "schedule_id", nullable = false)

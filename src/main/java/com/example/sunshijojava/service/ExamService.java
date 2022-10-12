@@ -19,8 +19,9 @@ public class ExamService {
     private final ExamRepository examRepository;
 
     public ExamResponse findExam(ExamRequest request) {
+
         Time time = timeRepository.findByDayOfWeekAndGradeAndClassNumAndSequence(
-                        String.valueOf(request.getDateTime()), request.getGrade(), request.getClassNum(), request.getSequence()
+                        request.getDateTime(), request.getGrade(), request.getClassNum(), request.getSequence()
                 )
                 .orElseThrow(() -> ScheduleNotFoundException.EXCEPTION);
 

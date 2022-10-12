@@ -20,6 +20,6 @@ public class ExamResponse {
         private UUID examId;
         private String title;
         private String teacher;
-        private LocalDateTime examDate;
+        private String examDate;
     }
 }

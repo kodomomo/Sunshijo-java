@@ -10,6 +10,6 @@ import java.time.LocalDateTime;
 public class ExamRequest {
     private int grade;
     private int classNum;
-    private LocalDateTime dateTime;
+    private String dateTime;
     private int sequence;
 }

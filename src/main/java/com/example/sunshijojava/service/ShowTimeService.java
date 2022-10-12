@@ -23,11 +23,12 @@ public class ShowTimeService {
 
         for (int i = 0; i < 5; i++) {
             LocalDateTime dateTime = LocalDateTime.parse(request.getDate(), DateTimeFormatter.ofPattern("yyyy-MM-dd")).plusDays(i);
+            String date = dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
             List<QueryResponse.QueryTimeResponse> list =
 
                     timeRepository.findAllByDayOfWeekAndGradeAndClassNumOrderByDayOfWeekAscSequenceAsc(
-                                    String.valueOf(dateTime), request.getGrade(), request.getClassNum()
+                                    date, request.getGrade(), request.getClassNum()
                             )
                             .stream()
                             .map(time ->
