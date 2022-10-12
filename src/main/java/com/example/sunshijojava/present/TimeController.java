@@ -21,9 +21,9 @@ public class TimeController {
     private final ShowTimeService service;
     private final ExamService examService;
 
-    @PatchMapping("/settings/{device}")
-    public void update(@PathVariable("device") String deviceToken, @RequestBody @Valid UserInfoSetRequest request) {
-          infoSetService.updateInfo(deviceToken, request);
+    @PutMapping("/settings/{device}")
+    public void update(@PathVariable("device") String device, @RequestBody @Valid UserInfoSetRequest request) {
+          infoSetService.updateInfo(device, request);
     }
 
     @GetMapping("/schedule")
