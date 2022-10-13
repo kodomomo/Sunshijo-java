@@ -3,6 +3,7 @@ package com.example.sunshijojava.present.dto.request;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -10,6 +11,6 @@ import java.time.LocalDateTime;
 public class ExamRequest {
     private int grade;
     private int classNum;
-    private String dateTime;
+    private LocalDate dateTime;
     private int sequence;
 }

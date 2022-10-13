@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -18,7 +19,7 @@ public class QueryResponse {
     @Builder
     public static class QueryTimeResponse {
         private final UUID scheduleId;
-        private final String dayOfWeek;
+        private final LocalDate dayOfWeek;
         private final int sequence;
         private final String subject;
         private final boolean isExam;

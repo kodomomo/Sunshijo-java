@@ -7,8 +7,6 @@ import com.example.sunshijojava.present.dto.response.QueryResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,13 +20,11 @@ public class ShowTimeService {
         List<QueryResponse> list1 = new ArrayList<>();
 
         for (int i = 0; i < 5; i++) {
-            LocalDateTime dateTime = LocalDateTime.parse(request.getDate(), DateTimeFormatter.ofPattern("yyyy-MM-dd")).plusDays(i);
-            String date = dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
             List<QueryResponse.QueryTimeResponse> list =
 
                     timeRepository.findAllByDayOfWeekAndGradeAndClassNumOrderByDayOfWeekAscSequenceAsc(
-                                    date, request.getGrade(), request.getClassNum()
+                                    request.getDate().plusDays(i), request.getGrade(), request.getClassNum()
                             )
                             .stream()
                             .map(time ->

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -20,6 +21,6 @@ public class ExamResponse {
         private UUID examId;
         private String title;
         private String teacher;
-        private String examDate;
+        private LocalDate examDate;
     }
 }
