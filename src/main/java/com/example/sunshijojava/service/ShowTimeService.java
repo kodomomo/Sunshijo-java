@@ -2,12 +2,10 @@ package com.example.sunshijojava.service;
 
 import com.example.sunshijojava.domain.repository.TimeRepository;
 import com.example.sunshijojava.present.dto.request.TimeRequest;
-import com.example.sunshijojava.present.dto.response.QueryListResponse;
 import com.example.sunshijojava.present.dto.response.QueryResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,32 +14,89 @@ import java.util.stream.Collectors;
 public class ShowTimeService {
     private final TimeRepository timeRepository;
 
-    public QueryListResponse time(TimeRequest request) {
-        List<QueryResponse> list1 = new ArrayList<>();
+    public QueryResponse time(TimeRequest request) {
 
-        for (int i = 0; i < 5; i++) {
+        List<QueryResponse.QueryTimeResponse> list =
 
-            List<QueryResponse.QueryTimeResponse> list =
+                timeRepository.findAllByDayOfWeek(
+                                request.getDate1()
+                        )
+                        .stream()
+                        .map(time ->
+                                QueryResponse.QueryTimeResponse.builder()
+                                        .scheduleId(time.getId())
+                                        .dayOfWeek(time.getDayOfWeek())
+                                        .sequence(time.getSequence())
+                                        .subject(time.getSubject())
+                                        .isExam(time.isExam())
+                                        .build()
+                        ).collect(Collectors.toList());
 
-                    timeRepository.findAllByDayOfWeekAndGradeAndClassNumOrderByDayOfWeekAscSequenceAsc(
-                                    request.getDate().plusDays(i), request.getGrade(), request.getClassNum()
-                            )
-                            .stream()
-                            .map(time ->
-                                    QueryResponse.QueryTimeResponse.builder()
-                                            .scheduleId(time.getId())
-                                            .dayOfWeek(time.getDayOfWeek())
-                                            .sequence(time.getSequence())
-                                            .subject(time.getSubject())
-                                            .isExam(time.isExam())
-                                            .build()
-                            ).collect(Collectors.toList());
+        List<QueryResponse.QueryTimeResponse> list2 =
 
-            list1.add((QueryResponse) list);
+                timeRepository.findAllByDayOfWeek(
+                                request.getDate2()
+                        )
+                        .stream()
+                        .map(time ->
+                                QueryResponse.QueryTimeResponse.builder()
+                                        .scheduleId(time.getId())
+                                        .dayOfWeek(time.getDayOfWeek())
+                                        .sequence(time.getSequence())
+                                        .subject(time.getSubject())
+                                        .isExam(time.isExam())
+                                        .build()
+                        ).collect(Collectors.toList());
 
-        }
+        List<QueryResponse.QueryTimeResponse> list3 =
 
-        return new QueryListResponse(list1);
+                timeRepository.findAllByDayOfWeek(
+                                request.getDate3()
+                        )
+                        .stream()
+                        .map(time ->
+                                QueryResponse.QueryTimeResponse.builder()
+                                        .scheduleId(time.getId())
+                                        .dayOfWeek(time.getDayOfWeek())
+                                        .sequence(time.getSequence())
+                                        .subject(time.getSubject())
+                                        .isExam(time.isExam())
+                                        .build()
+                        ).collect(Collectors.toList());
+
+        List<QueryResponse.QueryTimeResponse> list4 =
+
+                timeRepository.findAllByDayOfWeek(
+                                request.getDate4()
+                        )
+                        .stream()
+                        .map(time ->
+                                QueryResponse.QueryTimeResponse.builder()
+                                        .scheduleId(time.getId())
+                                        .dayOfWeek(time.getDayOfWeek())
+                                        .sequence(time.getSequence())
+                                        .subject(time.getSubject())
+                                        .isExam(time.isExam())
+                                        .build()
+                        ).collect(Collectors.toList());
+
+        List<QueryResponse.QueryTimeResponse> list5 =
+
+                timeRepository.findAllByDayOfWeek(
+                                request.getDate5()
+                        )
+                        .stream()
+                        .map(time ->
+                                QueryResponse.QueryTimeResponse.builder()
+                                        .scheduleId(time.getId())
+                                        .dayOfWeek(time.getDayOfWeek())
+                                        .sequence(time.getSequence())
+                                        .subject(time.getSubject())
+                                        .isExam(time.isExam())
+                                        .build()
+                        ).collect(Collectors.toList());
+
+        return new QueryResponse(list, list2, list3, list4, list5);
 
     }
 }

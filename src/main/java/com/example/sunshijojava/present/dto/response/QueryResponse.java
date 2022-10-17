@@ -13,13 +13,17 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class QueryResponse {
-    private final List<QueryTimeResponse> responseList;
+    private final List<QueryTimeResponse> list1;
+    private final List<QueryTimeResponse> list2;
+    private final List<QueryTimeResponse> list3;
+    private final List<QueryTimeResponse> list4;
+    private final List<QueryTimeResponse> list5;
 
     @Getter
     @Builder
     public static class QueryTimeResponse {
         private final UUID scheduleId;
-        private final LocalDate dayOfWeek;
+        private final String dayOfWeek;
         private final int sequence;
         private final String subject;
         private final boolean isExam;

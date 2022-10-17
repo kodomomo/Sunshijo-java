@@ -21,6 +21,6 @@ public class ExamResponse {
         private UUID examId;
         private String title;
         private String teacher;
-        private LocalDate examDate;
+        private String examDate;
     }
 }

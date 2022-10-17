@@ -1,16 +1,13 @@
 package com.example.sunshijojava.domain;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.UUID;
 
 @Getter
@@ -18,7 +15,8 @@ import java.util.UUID;
 @Table(name = "tbl_schedule")
 @Entity
 public class Time {
-    @Id @GeneratedValue(generator = "uuid2")
+    @Id
+    @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(columnDefinition = "BINARY(16)")
     private UUID id;
@@ -33,8 +31,7 @@ public class Time {
     private String subject;
 
     @Column
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private LocalDate dayOfWeek;
+    private String dayOfWeek;
 
     @Column
     private int sequence;
@@ -43,7 +40,7 @@ public class Time {
     private boolean isExam;
 
     @Builder
-    public Time(int grade, int classNum, String subject, LocalDate dayOfWeek, int sequence, boolean isExam) {
+    public Time(int grade, int classNum, String subject, String dayOfWeek, int sequence, boolean isExam) {
         this.grade = grade;
         this.classNum = classNum;
         this.subject = subject;

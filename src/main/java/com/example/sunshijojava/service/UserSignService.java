@@ -6,8 +6,8 @@ import com.example.sunshijojava.present.dto.request.UserRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service
 @RequiredArgsConstructor
+@Service
 public class UserSignService {
     private final UserRepository userRepository;
 

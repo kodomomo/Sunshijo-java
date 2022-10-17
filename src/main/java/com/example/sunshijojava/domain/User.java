@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
 @Getter
@@ -20,22 +21,23 @@ public class User {
     private UUID id;
 
     @Column
-    private int grade;
+    private Integer grade;
 
     @Column
-    private int classNum;
+    private Integer classNum;
 
+    @NotNull
     @Column(unique = true)
     private String deviceToken;
 
     @Builder
-    public User(int grade, int classNum, String deviceToken) {
+    public User(Integer grade, Integer classNum, String deviceToken) {
         this.grade = grade;
         this.classNum = classNum;
         this.deviceToken = deviceToken;
     }
 
-    public void updateUser(int grade, int classNum) {
+    public void updateUser(Integer grade, Integer classNum) {
         this.grade = grade;
         this.classNum = classNum;
     }
